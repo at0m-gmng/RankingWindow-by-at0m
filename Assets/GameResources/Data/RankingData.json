@@ -1,0 +1,36 @@
+{
+  "Entries": [
+    { "PlayerId": "uid_01", "AvatarAddress": "Ranking/AvatarDefault", "Level": 3,  "PlayerName": "Player_01", "Score": 1250, "LeagueRecord": 1 },
+    { "PlayerId": "uid_02", "AvatarAddress": "Ranking/AvatarDefault", "Level": 4,  "PlayerName": "Player_02", "Score": 1380, "LeagueRecord": 0 },
+    { "PlayerId": "uid_03", "AvatarAddress": "Ranking/AvatarDefault", "Level": 5,  "PlayerName": "Player_03", "Score": 1495, "LeagueRecord": 2 },
+    { "PlayerId": "uid_04", "AvatarAddress": "Ranking/AvatarDefault", "Level": 6,  "PlayerName": "Player_04", "Score": 1610, "LeagueRecord": 1 },
+    { "PlayerId": "uid_05", "AvatarAddress": "Ranking/AvatarDefault", "Level": 7,  "PlayerName": "Player_05", "Score": 1740, "LeagueRecord": 0 },
+    { "PlayerId": "uid_06", "AvatarAddress": "Ranking/AvatarDefault", "Level": 8,  "PlayerName": "Player_06", "Score": 1885, "LeagueRecord": 2 },
+    { "PlayerId": "uid_07", "AvatarAddress": "Ranking/AvatarDefault", "Level": 9,  "PlayerName": "Player_07", "Score": 2010, "LeagueRecord": 1 },
+    { "PlayerId": "uid_08", "AvatarAddress": "Ranking/AvatarDefault", "Level": 10, "PlayerName": "Player_08", "Score": 2190, "LeagueRecord": 2 },
+    { "PlayerId": "uid_09", "AvatarAddress": "Ranking/AvatarDefault", "Level": 11, "PlayerName": "Player_09", "Score": 2335, "LeagueRecord": 0 },
+    { "PlayerId": "uid_10", "AvatarAddress": "Ranking/AvatarDefault", "Level": 12, "PlayerName": "Player_10", "Score": 2490, "LeagueRecord": 1 },
+
+    { "PlayerId": "uid_11", "AvatarAddress": "Ranking/AvatarDefault", "Level": 13, "PlayerName": "Player_11", "Score": 2655, "LeagueRecord": 2 },
+    { "PlayerId": "uid_12", "AvatarAddress": "Ranking/AvatarDefault", "Level": 14, "PlayerName": "Player_12", "Score": 2810, "LeagueRecord": 0 },
+    { "PlayerId": "uid_13", "AvatarAddress": "Ranking/AvatarDefault", "Level": 15, "PlayerName": "Player_13", "Score": 2995, "LeagueRecord": 1 },
+    { "PlayerId": "uid_14", "AvatarAddress": "Ranking/AvatarDefault", "Level": 16, "PlayerName": "Player_14", "Score": 3150, "LeagueRecord": 2 },
+    { "PlayerId": "uid_15", "AvatarAddress": "Ranking/AvatarDefault", "Level": 17, "PlayerName": "Player_15", "Score": 3320, "LeagueRecord": 1 },
+    { "PlayerId": "uid_16", "AvatarAddress": "Ranking/AvatarDefault", "Level": 18, "PlayerName": "Player_16", "Score": 3480, "LeagueRecord": 0 },
+    { "PlayerId": "uid_17", "AvatarAddress": "Ranking/AvatarDefault", "Level": 19, "PlayerName": "Player_17", "Score": 3655, "LeagueRecord": 2 },
+    { "PlayerId": "uid_18", "AvatarAddress": "Ranking/AvatarDefault", "Level": 20, "PlayerName": "Player_18", "Score": 3810, "LeagueRecord": 0 },
+    { "PlayerId": "uid_19", "AvatarAddress": "Ranking/AvatarDefault", "Level": 21, "PlayerName": "Player_19", "Score": 3990, "LeagueRecord": 1 },
+    { "PlayerId": "uid_20", "AvatarAddress": "Ranking/AvatarDefault", "Level": 22, "PlayerName": "Player_20", "Score": 4125, "LeagueRecord": 2 },
+
+    { "PlayerId": "uid_21", "AvatarAddress": "Ranking/AvatarDefault", "Level": 23, "PlayerName": "Player_21", "Score": 4300, "LeagueRecord": 0 },
+    { "PlayerId": "uid_22", "AvatarAddress": "Ranking/AvatarDefault", "Level": 24, "PlayerName": "Player_22", "Score": 4460, "LeagueRecord": 1 },
+    { "PlayerId": "uid_23", "AvatarAddress": "Ranking/AvatarDefault", "Level": 25, "PlayerName": "Player_23", "Score": 4635, "LeagueRecord": 2 },
+    { "PlayerId": "uid_24", "AvatarAddress": "Ranking/AvatarDefault", "Level": 26, "PlayerName": "Player_24", "Score": 4790, "LeagueRecord": 1 },
+    { "PlayerId": "uid_25", "AvatarAddress": "Ranking/AvatarDefault", "Level": 27, "PlayerName": "Player_25", "Score": 4965, "LeagueRecord": 0 },
+    { "PlayerId": "uid_26", "AvatarAddress": "Ranking/AvatarDefault", "Level": 28, "PlayerName": "Player_26", "Score": 5120, "LeagueRecord": 2 },
+    { "PlayerId": "uid_27", "AvatarAddress": "Ranking/AvatarDefault", "Level": 29, "PlayerName": "Player_27", "Score": 5295, "LeagueRecord": 1 },
+    { "PlayerId": "uid_28", "AvatarAddress": "Ranking/AvatarDefault", "Level": 30, "PlayerName": "Player_28", "Score": 5470, "LeagueRecord": 0 },
+    { "PlayerId": "uid_29", "AvatarAddress": "Ranking/AvatarDefault", "Level": 31, "PlayerName": "Player_29", "Score": 5630, "LeagueRecord": 2 },
+    { "PlayerId": "uid_30", "AvatarAddress": "Ranking/AvatarDefault", "Level": 32, "PlayerName": "Player_30", "Score": 5800, "LeagueRecord": 1 }
+  ]
+}

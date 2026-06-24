@@ -1,0 +1,30 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ead6926f8d7474e9d68e34062d63986, type: 3}
+  m_Name: UIConfig
+  m_EditorClassIdentifier: 
+  <WindowsParent>k__BackingField: {fileID: 7189078936042710291, guid: 82a5b3809c90a9f4084e5f2041fc8f0f, type: 3}
+  <Windows>k__BackingField:
+  - Reference:
+      m_AssetGUID: 757efc4518e539f4d9e5f5970a12596d
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    ID: 10
+  - Reference:
+      m_AssetGUID: 3ffce39554d2a23428c9844605f081d7
+      m_SubObjectName: 
+      m_SubObjectGUID: 
+      m_SubObjectType: 
+      m_EditorAssetChanged: 0
+    ID: 50

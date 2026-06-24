@@ -1,0 +1,133 @@
+---
+description: Глобальные правила код-стайла и практики (C#/Unity). Дублирует навык ProjectCodingStandards для alwaysApply.
+alwaysApply: true
+---
+
+# Правила код-стайла
+
+## MonoBehaviour — минимум
+
+**Чем меньше MonoBehaviour, тем лучше.**
+
+- **Не плодить** отдельные MonoBehaviour «на каждый виджет» (иконка + текст, одна метрика), если фича уже живёт на окне с Canvas.
+- **Новый MonoBehaviour** — только если фичи **ещё нет** в игре (новый самостоятельный UI-блок / world-объект) или это **крупный сервисный** компонент на сцене/префабе, а не обёртка над парой `Image` + `TMP_Text`.
+- Предпочитать: расширить существующий MonoBehaviour или вынести логику в обычный класс с DI; не дублировать Bind/Unbind ради одного поля.
+
+## Модификаторы доступа
+
+**У каждого члена класса — явный модификатор:** `public`, `private`, `protected`, `internal`.
+
+```csharp
+// ❌
+const float Speed = 5f;
+void Tick() { }
+
+// ✅
+private const float Speed = 5f;
+private void Tick() { }
+```
+
+## C# стиль
+
+- Не использовать `var`
+- Фигурные скобки всегда, на новой строке (исключение — expression body `=>`, см. ниже)
+- **Expression body (`=>`)** — обязателен, если тело метода или read-only свойства состоит из **одной инструкции** (в т.ч. тернарник `? :`). Если в теле `if` с несколькими инструкциями, цикл или несколько statement — блок `{ }` на новой строке
+- `/// <summary>` для публичных членов
+- Один класс / интерфейс / enum / struct — один файл
+- Магические числа и строки — в `const` или enum
+- Enum для инспектора вместо `string`/`int` полей; проверки по SerializeField enum
+- Без комментариев в теле кода — только summary
+- Без `Debug.Log*` без запроса пользователя; если просят логи — `Debug.LogError`
+- **Логи при разработке крупной фичи:** добавлять `Debug.LogError` на каждом этапе пайплайна (вход в стадию, ключевые ветвления, все причины отказа/раннего выхода) — чтобы по логам сразу видеть, где ломается. Префикс-тег `[Feature]` в сообщении. Убирать после отладки и приёмки фичи
+- **Пустые строки:** одна между методами, свойствами и логическими блоками полей (`[Header]`, группы `const`). **Запрещено** ставить пустую строку после каждой строки кода, между соседними `const` / `[SerializeField]` полями и сразу после `{` тела класса
+
+### Expression body — примеры
+
+❌ **Плохо** — одна инструкция, но блок вместо `=>`:
+
+```csharp
+ 1  public void ResetYaw()
+ 2  {
+ 3      yawDegrees = 0f;
+ 4  }
+ 5
+ 6  public void Register(InventoryCharacterPreviewPlayerSession registeredSession)
+ 7  {
+ 8      session = registeredSession;
+ 9  }
+```
+
+✅ **Хорошо** — одна инструкция → expression body:
+
+```csharp
+ 1  public void ResetYaw() => yawDegrees = 0f;
+ 2
+ 3  public void Register(InventoryCharacterPreviewPlayerSession registeredSession) => session = registeredSession;
+ 4
+ 5  public ModelManager ModelManager => modelManager;
+```
+
+❌ **Плохо** — одно выражение, но развёрнутый `if`/`else` вместо тернарника и `=>`:
+
+```csharp
+ 1  public int GetSign(float value)
+ 2  {
+ 3      if (value >= 0f)
+ 4      {
+ 5          return 1;
+ 6      }
+ 7      else
+ 8      {
+ 9          return -1;
+10      }
+11  }
+```
+
+✅ **Хорошо** — одно выражение, в т.ч. тернарник → expression body:
+
+```csharp
+ 1  public int GetSign(float value) => value >= 0f ? 1 : -1;
+ 2
+ 3  private float GetCharacterHeight() => hasBones ? boneHeight : DefaultCharacterHeight;
+```
+
+✅ **Хорошо** — несколько инструкций в ветке → блок `{ }`:
+
+```csharp
+ 1  public void ExitInventoryPreview()
+ 2  {
+ 3      if (isInInventoryPreview)
+ 4      {
+ 5          isInInventoryPreview = false;
+ 6          equipperBinder.ExitInventoryPreview();
+ 7          layerIsolation.ExitIsolation();
+ 8      }
+ 9  }
+```
+
+## Логика
+
+- Без early exit — вся логика внутри `if`
+- Без лишних null-check на `[SerializeField]` — ошибка должна быть видна; проверять данные при загрузке
+- **Оптимизация** — всегда учитывать; упор по контексту задачи:
+  - **Memory** — минимум аллокаций и GC, без лишних временных объектов в hot path
+  - **CPU** — реже тяжёлые операции, кэш ссылок, без лишней работы каждый кадр
+  - **GPU** — не увеличивать draw calls, overdraw и стоимость рендер-пути без необходимости
+
+## Unity
+
+- **Запрещено:** `FindObjectOfType`, `AddComponent`, `GetComponentsInChildren`, `GetComponentsInParent`
+- **Допустимо:** `GetComponent` / `TryGetComponent` на collider/raycast hit
+- Зависимости — `[SerializeField]` или Zenject DI, не поиск в иерархии
+- Сцены и префабы — **не менять без разрешения**; после кода описать настройки инспектора
+- `[Header]` для группировки полей в инспекторе
+
+## DI
+
+- Zenject: `[Inject] private void Construct(...)` для MonoBehaviour; constructor для сервисов
+- Регистрация сервисов — в Installer (`AllServicesInstaller` / scene installer)
+
+## Задачи агента
+
+- «Вариант» = отдельный класс, не замена существующего
+- После задачи — **FlowTaskExecution** + **UnityMCP**
