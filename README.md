@@ -3,7 +3,7 @@
 # Ranking Window
 <div align="center" style="font-size: 40px">
 
-[![Image](https://img.shields.io/badge/TASK-LINK-blue)](https://docs.google.com/document/d/1gwkjEA2yfivABZTX6NOwZjedceG63mnq/edit?tab=t.0)
+[![Image](https://img.shields.io/badge/TASK-LINK-blue)](https://drive.google.com/file/d/1O9q0YRWdh-Dh1hnQasXwmCovxlaGgY1T/view?usp=sharing)
 
 </div>
 </div>
