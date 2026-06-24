@@ -29,7 +29,7 @@
 ### Download
 <div align="center">
 
-[![Github All Releases](https://img.shields.io/github/downloads/at0m-gmng/BallonsMerge/total.svg)](https://github.com/at0m-gmng/BallonsMerge/releases)
+[![Github All Releases](https://img.shields.io/github/downloads/at0m-gmng/RankingWindow-by-at0m/total.svg)](https://github.com/at0m-gmng/RankingWindow-by-at0m/releases)
 
 </div>
 
